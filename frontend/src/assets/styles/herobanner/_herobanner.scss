@@ -1,0 +1,34 @@
+.hero-banner {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    .hero-banner-img {
+        position: absolute;
+        inset: 0;
+        background-image: url("../../images/hero-banner-img.jpg");
+        background-position: center ceter;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba($color: #000000, $alpha: 0.5);
+    }
+
+    .hero-banner-inner {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        text-align: center;
+
+        h1,
+        p {
+
+            color: white !important;
+        }
+    }
+}

@@ -1,0 +1,122 @@
+@import "./theme-variable";
+
+.button-primary {
+    background-color: $btn-primary-bg-color;
+    border-radius: $btn-primary-border-radius;
+    // padding: 4px 10px;
+    color: $btn-primary-text-color;
+    padding: 15px 30px !important;
+
+    &:hover {
+        color: $btn-primary-text-color-hover;
+        background-color: $btn-primary-bg-color-hover
+    }
+}
+
+
+.button-secondary {
+    background-color: $btn-secondary-bg-color;
+    border-radius: $btn-secondary-border-radius;
+    // padding: 4px 10px;
+    color: $btn-secondary-text-color;
+    padding: 15px 30px !important;
+    border: 1px solid $btn-secondary-border-color;
+
+    &:hover {
+        color: $btn-secondary-text-color-hover;
+        background-color: $btn-secondary-bg-color-hover;
+    }
+}
+
+.inner-wrap {
+    padding-top: $inner-wrap-spacing-top;
+    padding-bottom: $inner-wrap-spacing-bottom;
+}
+
+.content-wrap {
+    margin-top: $content-wrap-spacing-top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: $h1-size;
+    font-weight: $h1-font-weight;
+}
+
+h2 {
+    font-size: $h2-size;
+    font-weight: $h2-font-weight;
+
+}
+
+h3 {
+    font-size: $h3-size;
+    font-weight: $h3-font-weight;
+
+}
+
+h4 {
+    font-size: $h4-size;
+    font-weight: $h4-font-weight;
+
+}
+
+p {
+    font-size: $fonts-size-text;
+    color: $fonts-color-base;
+    font-weight: $fonts-weight-base;
+}
+
+a {
+    color: $color-3 !important;
+
+    &:hover {
+        color: $color-2 !important;
+    }
+}
+
+
+@media (max-width:991px) {
+    .inner-wrap {
+        padding-top: $inner-wrap-spacing-top-sm;
+        padding-bottom: $inner-wrap-spacing-bottom-sm;
+    }
+
+    .content-wrap {
+        // margin-top: $content-wrap-spacing-top;
+    }
+
+
+    h1 {
+        font-size: $h1-size-sm;
+    }
+
+    h2 {
+        font-size: $h2-size-sm;
+    }
+
+    h3 {
+        font-size: $h3-size-sm;
+    }
+
+    h4 {
+        font-size: $h4-size-sm;
+    }
+
+    h5 {
+        font-size: $h5-size-sm;
+    }
+
+    h6 {
+        font-size: $h6-size-sm;
+    }
+}
