@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 
 import { mongoDbConnect } from './src/config/mongoDBConfig.js';
-import { registerRoute, loginRoute, createBlogRoute, deleteBlogRoute } from "./src/api/routes/index.js"
+import { registerRoute, loginRoute, createBlogRoute, deleteBlogRoute, updateBlogRoute } from "./src/api/routes/index.js"
 
 
 dotenv.config();
@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json())
 
 app.use("/api/auth", registerRoute, loginRoute);
-app.use("/api/blog", createBlogRoute, deleteBlogRoute)
+app.use("/api/blog", createBlogRoute, deleteBlogRoute, updateBlogRoute)
 
 
 const restart = () => mongoDbConnect().then(() => {
