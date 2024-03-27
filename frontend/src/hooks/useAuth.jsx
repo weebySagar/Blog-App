@@ -1,10 +1,14 @@
 import { useState } from "react";
-import { loginService, registerUserService } from "../services/authService"; // Import your service functions
-import { useAuthUser } from "../context/AuthContext";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+
+import { loginService, registerUserService } from "../services/authService";
+import { useAuthUser } from "../context/AuthContext";
+
 const useAuth = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { login: loginUser } = useAuthUser();
+  const navigate = useNavigate();
 
   // Function to handle login
   const login = async credentials => {
@@ -14,7 +18,7 @@ const useAuth = () => {
       success: userData => {
         loginUser(userData.token, userData.user);
         setIsLoading(false);
-
+        navigate("/blogs");
         return "User Login Successfully";
       },
       error: err => {
