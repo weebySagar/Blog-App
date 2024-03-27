@@ -1,12 +1,15 @@
 import { StatusCodes } from "http-status-codes"
-import { userModel } from "../../../models";
-import { hashPassword } from "../../../services";
+import { userModel } from "../../../models/index.js";
+import { hashPassword } from "../../../services/index.js";
 
 
 const register = async (req, res) => {
 
     try {
-        const { email, password } = req.body;
+        const { name, email, password } = req.body;
+        if (!name || !email || !password) {
+            return res.status(StatusCodes.BAD_REQUEST).json({ status: "error", msg: "Enter all details" })
+        }
 
         const existingUser = await userModel.findOne({ email });
 
@@ -14,9 +17,9 @@ const register = async (req, res) => {
             return res.status(StatusCodes.CONFLICT).json({ status: "error", msg: "User already registered" })
         }
 
-        const hashedPassword = hashPassword(password);
+        const hashedPassword = await hashPassword(password);
 
-        const newUser = await userModel.create({ email, hashedPassword });
+        const newUser = await userModel.create({ name, email, password: hashedPassword });
 
         res.status(StatusCodes.CREATED).json({ status: "success", msg: "User created successfully", user: newUser })
     } catch (error) {

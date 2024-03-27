@@ -1,0 +1,1 @@
+export { default as registerRoute } from "./auth/register.routes.js";

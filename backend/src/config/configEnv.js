@@ -12,8 +12,8 @@ if (env === 'production') {
 }
 else {
     configEnvironment = {
-        db: 'mongodb://0.0.0.0/localDB',
-        port: 3000
+        db: 'mongodb://0.0.0.0/blogLocal',
+        port: 3001
     }
 }
 
