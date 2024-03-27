@@ -1,0 +1,1 @@
+export { default as tokenValidator } from "./tokenValidator/tokenValidator.js"
