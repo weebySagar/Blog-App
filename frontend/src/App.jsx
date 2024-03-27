@@ -1,6 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Header from "@components/Header/Header";
+import SignupPage from "@pages/SignupPage";
+import LoginPage from "@pages/LoginPage";
+import { AuthProvider } from "./context/AuthContext";
+import BlogPage from "@pages/BlogPage";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const router = createBrowserRouter([
@@ -8,23 +13,26 @@ function App() {
       path: "/",
       element: <Homepage />,
     },
-    // {
-    //   path: "/register",
-    //   element: <SignupPage />,
-    // },
-    // {
-    //   path: "/login",
-    //   element: <LoginPage />,
-    // },
-    // {
-    //   path: "/chat",
-    //   element: <AuthPage Component={ChatPage} />,
-    // },
+    {
+      path: "/signup",
+      element: <SignupPage />,
+    },
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+    {
+      path: "/blogs",
+      element: <BlogPage />,
+    },
   ]);
   return (
     <>
-      <Header />
-      <RouterProvider router={router} />
+      {/* <Header /> */}
+      <AuthProvider>
+        <RouterProvider router={router} />
+        <Toaster />
+      </AuthProvider>
     </>
   );
 }

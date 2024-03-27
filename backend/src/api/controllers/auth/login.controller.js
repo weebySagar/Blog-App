@@ -38,7 +38,7 @@ const login = async (req, res) => {
 
         const authToken = jwt.sign(data, JWT_SECRET);
 
-        return res.status(StatusCodes.OK).json({ status: "success", token: authToken, msg: "Login Successfull" })
+        return res.status(StatusCodes.OK).json({ status: "success", token: authToken, msg: "Login Successfull", user })
     } catch (error) {
         console.log(error);
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: "error", msg: "Internal server error" })

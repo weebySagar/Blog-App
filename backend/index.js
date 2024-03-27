@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from "cors"
 
 import { mongoDbConnect } from './src/config/mongoDBConfig.js';
 import { registerRoute, loginRoute, createBlogRoute, deleteBlogRoute, updateBlogRoute } from "./src/api/routes/index.js"
@@ -8,6 +9,7 @@ import { registerRoute, loginRoute, createBlogRoute, deleteBlogRoute, updateBlog
 dotenv.config();
 
 const app = express();
+app.use(cors())
 app.use(express.json())
 
 app.use("/api/auth", registerRoute, loginRoute);

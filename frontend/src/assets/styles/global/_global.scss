@@ -3,13 +3,16 @@
 .button-primary {
     background-color: $btn-primary-bg-color;
     border-radius: $btn-primary-border-radius;
-    // padding: 4px 10px;
     color: $btn-primary-text-color;
-    padding: 15px 30px !important;
+    outline: none;
+    border: 1px solid $btn-primary-border-color;
+    display: inline-block;
+    width: 100%;
 
     &:hover {
         color: $btn-primary-text-color-hover;
-        background-color: $btn-primary-bg-color-hover
+        background-color: $btn-primary-bg-color-hover;
+        border-color: $btn-primary-border-color-hover;
     }
 }
 
