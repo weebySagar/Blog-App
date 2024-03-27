@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 
 import { mongoDbConnect } from './src/config/mongoDBConfig.js';
-import { registerRoute } from "./src/api/routes/index.js"
+import { registerRoute, loginRoute } from "./src/api/routes/index.js"
 
 
 dotenv.config();
@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 app.use(express.json())
 
-app.use("/api/auth", registerRoute)
+app.use("/api/auth", registerRoute, loginRoute)
 
 
 const restart = () => mongoDbConnect().then(() => {
