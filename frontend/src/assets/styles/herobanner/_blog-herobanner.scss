@@ -1,0 +1,21 @@
+@import "../global/theme-variable";
+
+.blog-hero-banner {
+    height: 50vh;
+    background-color: $color-5;
+    position: relative;
+    color: $color-1;
+
+    .hero-banner-inner {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        text-align: center;
+    }
+}
+
+@media (max-width:991px) {
+    .blog-hero-banner {
+        height: 30vh;
+    }
+}

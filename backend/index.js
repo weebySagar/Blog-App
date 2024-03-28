@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import cors from "cors"
 
 import { mongoDbConnect } from './src/config/mongoDBConfig.js';
-import { registerRoute, loginRoute, createBlogRoute, deleteBlogRoute, updateBlogRoute } from "./src/api/routes/index.js"
+import { registerRoute, loginRoute, createBlogRoute, deleteBlogRoute, updateBlogRoute, getAllBlogsRoute } from "./src/api/routes/index.js"
 
 
 dotenv.config();
@@ -13,7 +13,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use("/api/auth", registerRoute, loginRoute);
-app.use("/api/blog", createBlogRoute, deleteBlogRoute, updateBlogRoute)
+app.use("/api/blog", getAllBlogsRoute, createBlogRoute, deleteBlogRoute, updateBlogRoute)
 
 
 const restart = () => mongoDbConnect().then(() => {
