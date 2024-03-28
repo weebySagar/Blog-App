@@ -5,10 +5,12 @@ import formatDate from "../../../utils/formattedDate";
 import useFetch from "@hooks/useFetch";
 import { deleteBlog } from "../../../services/blogService";
 import toast from "react-hot-toast";
+import ParseContent from "@components/parsecontent/ParseContent";
 
 const BlogItem = ({
   _id,
   title,
+  subtitle,
   content,
   author,
   createdAt,
@@ -33,9 +35,7 @@ const BlogItem = ({
           <Card.Img variant="top" src="" />
           <Card.Body>
             <Card.Title as={"h4"}>{title}</Card.Title>
-            <Card.Text className="fs-6 mt-3">
-              {content.substring(0, 50)}...
-            </Card.Text>
+            <Card.Text className="fs-6 mt-3">{subtitle}</Card.Text>
             <div className="d-flex justify-content-between align-items-center mt-3">
               <p className="fs-6">{formatDate(createdAt)}</p>
               <p className="text-capitalize fs-6">{author.name}</p>

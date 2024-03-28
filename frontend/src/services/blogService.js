@@ -57,3 +57,16 @@ export const deleteBlog = async (blogId) => {
         throw new Error(error.response.data.msg)
     }
 }
+
+export const createBlog = async (title, subtitle, content) => {
+    try {
+        const { data } = await axios.post(`${BASE_URL}/create`, { title, subtitle, content }, {
+            headers: {
+                Authorization: token
+            }
+        });
+        return data.blog;
+    } catch (error) {
+        throw new Error(error.response.data.msg)
+    }
+}

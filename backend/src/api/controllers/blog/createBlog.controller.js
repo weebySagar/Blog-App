@@ -4,7 +4,7 @@ import { blogModel } from "../../../models/index.js";
 
 const createBlog = async (req, res) => {
     try {
-        const { title, content, tags } = req.body;
+        const { title, subtitle, content, tags } = req.body;
 
         if (!title || !content) {
             return res.status(StatusCodes.BAD_REQUEST).json({
@@ -12,7 +12,7 @@ const createBlog = async (req, res) => {
             })
         }
 
-        const newBlog = await blogModel.create({ title, author: req.user.userId, content, tags })
+        const newBlog = await blogModel.create({ title, subtitle, author: req.user.userId, content, tags })
 
         res.status(StatusCodes.CREATED).json({ status: "success", msg: "Blog created successfully", blog: newBlog })
     } catch (error) {

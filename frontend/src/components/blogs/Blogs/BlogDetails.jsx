@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 import InnerWrapper from "@components/ui/InnerWrapper";
 import formatDate from "../../../utils/formattedDate";
+import ParseContent from "@components/parsecontent/ParseContent";
 
 const BlogDetails = ({ blog }) => {
   return (
@@ -18,7 +19,9 @@ const BlogDetails = ({ blog }) => {
               </div>
               <hr />
 
-              <div className="content-wrap">{<p>{blog?.content}</p>}</div>
+              <div className="content-wrap">
+                <ParseContent>{blog?.content}</ParseContent>
+              </div>
             </Col>
           </Row>
         </Container>
