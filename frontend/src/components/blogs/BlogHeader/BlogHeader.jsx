@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "@styles/header/_blogheader.scss";
 
-const BlogHeader = () => {
+const BlogHeader = ({ className }) => {
   const [isSticky, setIsSticky] = useState(false);
 
   const handleScroll = () => {
@@ -18,7 +18,9 @@ const BlogHeader = () => {
     };
   }, []);
   return (
-    <header className={`blog-header ${isSticky ? "sticky shadow" : ""}`}>
+    <header
+      className={`blog-header ${isSticky ? "sticky shadow" : ""} ${className}`}
+    >
       <Navbar expand="md" className="py-3 custom-navbar" bg="transparent">
         <Container>
           <Navbar.Brand as={Link} to={"/"}>

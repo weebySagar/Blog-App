@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFetch = fetchFunction => {
+const useFetch = (fetchFunction, ...params) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -10,7 +10,7 @@ const useFetch = fetchFunction => {
       setIsLoading(true);
       setError(null);
       try {
-        const result = await fetchFunction();
+        const result = await fetchFunction(...params);
         setData(result);
       } catch (error) {
         setError(error.message);

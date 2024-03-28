@@ -6,6 +6,7 @@ import LoginPage from "@pages/LoginPage";
 import { AuthProvider } from "./context/AuthContext";
 import BlogPage from "@pages/BlogPage";
 import { Toaster } from "react-hot-toast";
+import BlogDetailPage from "@pages/BlogDetailPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -24,6 +25,10 @@ function App() {
     {
       path: "/blogs",
       element: <BlogPage />,
+    },
+    {
+      path: "/blogs/:blogId",
+      element: <BlogDetailPage />,
     },
   ]);
   return (

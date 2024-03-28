@@ -16,3 +16,18 @@ export const getAllBlogs = async () => {
         throw new Error(error.response.data.msg)
     }
 }
+
+export const getBlog = async (blogId) => {
+    try {
+        const { data } = await axios.get(`${BASE_URL}/${blogId}`, {
+            headers: {
+                Authorization: token
+            }
+        });
+        console.log(data.blog);
+        return data.blog;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.response.data.msg)
+    }
+}

@@ -1,13 +1,9 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import formatDate from "../../../utils/formattedDate";
 
 const BlogItem = ({ _id, title, content, author, createdAt }) => {
-  const date = new Date(createdAt);
-  const formattedDate = `${date.getDate()}/${
-    date.getMonth() + 1
-  }/${date.getFullYear()} `;
-
   return (
     <Link to={_id}>
       <Card style={{ width: "18rem" }}>
@@ -18,7 +14,7 @@ const BlogItem = ({ _id, title, content, author, createdAt }) => {
             {content.substring(0, 50)}...
           </Card.Text>
           <div className="d-flex justify-content-between align-items-center mt-3">
-            <p className="fs-6">{formattedDate}</p>
+            <p className="fs-6">{formatDate(createdAt)}</p>
             <p className="text-capitalize fs-6">{author.name}</p>
           </div>
         </Card.Body>
