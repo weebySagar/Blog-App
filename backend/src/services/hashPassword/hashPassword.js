@@ -6,7 +6,6 @@ const hashPassword = async (password) => {
         const salt = await bcrypt.genSalt(10);
         return await bcrypt.hash(password, salt);
     } catch (error) {
-        console.log("hashPassword", error);
         throw new Error(error)
         // return res
         //     .status(StatusCodes.INTERNAL_SERVER_ERROR)

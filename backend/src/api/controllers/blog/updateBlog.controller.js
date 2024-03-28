@@ -28,7 +28,6 @@ const updateBlog = async (req, res) => {
 
         res.status(StatusCodes.OK).json({ status: "success", msg: "Blog updated successfully", blog: updatedBlog })
     } catch (error) {
-        console.log(error);
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: "error", msg: "Internal server error" })
     }
 }

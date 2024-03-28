@@ -7,7 +7,6 @@ const getBlogByUser = async (req, res) => {
         const blogs = await blogModel.find({ author: req.user.userId.toString() }).sort({ createdAt: "desc" });
         res.status(StatusCodes.OK).json({ stattus: "success", msg: "fetched blog", blogs })
     } catch (error) {
-        console.log(error);
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ status: "error", msg: "Internal server error" })
     }
 }

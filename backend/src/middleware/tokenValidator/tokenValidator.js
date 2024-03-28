@@ -25,7 +25,6 @@ const tokenValidator = async (req, res, next) => {
             next()
         })
     } catch (error) {
-        console.log(error);
         return res
             .status(StatusCodes.INTERNAL_SERVER_ERROR)
             .send({ status: "error", msg: "Internal Server Error!!" });

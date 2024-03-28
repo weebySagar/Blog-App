@@ -9,7 +9,6 @@ import { Spinner } from "react-bootstrap";
 
 const BlogDetailPage = () => {
   const { blogId } = useParams();
-  console.log(blogId);
   const { data, isLoading } = useFetch(getBlog, blogId);
 
   return (

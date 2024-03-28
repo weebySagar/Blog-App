@@ -5,7 +5,6 @@ const updateUser = async (req, res) => {
     try {
         const { name } = req.body;
         const userId = req.user.userId;
-        console.log(name, userId);
 
         const user = await userModel.findByIdAndUpdate(userId, { name }, { new: true });
 

@@ -31,7 +31,6 @@ export const AuthProvider = ({ children }) => {
     const newUser = JSON.parse(localStorage.getItem("storyverseuser"));
 
     if (token && newUser) {
-      //   setUser(...user, token, user);
       setAuthData({ ...authData, token, user: newUser });
     }
   }, []);
