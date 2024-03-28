@@ -31,12 +31,14 @@ const BlogItem = ({
   return (
     <>
       <Link to={`/blogs/${_id}`}>
-        <Card>
+        <Card className="h-100">
           <Card.Img variant="top" src="" />
-          <Card.Body>
-            <Card.Title as={"h4"}>{title}</Card.Title>
-            <Card.Text className="fs-6 mt-3">{subtitle}</Card.Text>
-            <div className="d-flex justify-content-between align-items-center mt-3">
+          <Card.Body className="d-flex flex-column">
+            <Card.Title as={"h4"} className="mb-4">
+              {title}
+            </Card.Title>
+            <Card.Text className="fs-6 mb-3">{subtitle}</Card.Text>
+            <div className="d-flex justify-content-between align-items-center mt-auto">
               <p className="fs-6">{formatDate(createdAt)}</p>
               <p className="text-capitalize fs-6">{author.name}</p>
             </div>

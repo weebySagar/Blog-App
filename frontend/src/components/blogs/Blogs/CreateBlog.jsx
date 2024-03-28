@@ -22,6 +22,7 @@ const CreateBlog = () => {
       success: () => {
         setTitle("");
         setContent("");
+        setSubtitle("");
       },
       error: err => err.message,
     });
