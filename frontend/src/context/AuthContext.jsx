@@ -1,12 +1,13 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext();
+const initialState = {
+  token: localStorage.getItem("storyversetoken") || null,
+  user: JSON.parse(localStorage.getItem("storyverseuser")) || null,
+};
 
 export const AuthProvider = ({ children }) => {
-  const [authData, setAuthData] = useState({
-    token: localStorage.getItem("storyversetoken") || null,
-    user: JSON.parse(localStorage.getItem("storyverseuser")) || null,
-  });
+  const [authData, setAuthData] = useState(initialState);
 
   const login = (token, user) => {
     setAuthData({ token, user });
