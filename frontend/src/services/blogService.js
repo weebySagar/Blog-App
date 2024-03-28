@@ -24,7 +24,6 @@ export const getBlog = async (blogId) => {
                 Authorization: token
             }
         });
-        console.log(data.blog);
         return data.blog;
     } catch (error) {
         throw new Error(error.response.data.msg)
@@ -41,7 +40,20 @@ export const getBlogByUser = async () => {
         });
         return data.blogs;
     } catch (error) {
-        console.log(error);
+        throw new Error(error.response.data.msg)
+    }
+}
+
+
+export const deleteBlog = async (blogId) => {
+    try {
+        const { data } = await axios.delete(`${BASE_URL}/${blogId}`, {
+            headers: {
+                Authorization: token
+            }
+        });
+        return data.blogs;
+    } catch (error) {
         throw new Error(error.response.data.msg)
     }
 }

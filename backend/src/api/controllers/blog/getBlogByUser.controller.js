@@ -4,7 +4,7 @@ import { blogModel } from "../../../models/index.js";
 
 const getBlogByUser = async (req, res) => {
     try {
-        const blogs = await blogModel.find({ author: req.user.userId.toString() });
+        const blogs = await blogModel.find({ author: req.user.userId.toString() }).sort({ createdAt: "desc" });
         res.status(StatusCodes.OK).json({ stattus: "success", msg: "fetched blog", blogs })
     } catch (error) {
         console.log(error);
