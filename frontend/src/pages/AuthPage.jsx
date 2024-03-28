@@ -7,7 +7,7 @@ const AuthPage = ({ Component, ...rest }) => {
   if (user) {
     return <Component {...rest} />;
   } else {
-    return <Navigate to={"/login"} />;
+    return <Navigate to={"/login"} replace={true} />;
   }
 };
 
