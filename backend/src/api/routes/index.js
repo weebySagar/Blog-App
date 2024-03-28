@@ -5,3 +5,4 @@ export { default as deleteBlogRoute } from "./blog/deleteBlog.routes.js";
 export { default as updateBlogRoute } from "./blog/updateBlog.routes.js";
 export { default as getAllBlogsRoute } from "./blog/getAllBlogs.routes.js";
 export { default as getBlogRoute } from "./blog/getBlog.routes.js";
+export { default as getBlogByUserRoute } from "./blog/getBlogByUser.routes.js";

@@ -7,6 +7,7 @@ import { AuthProvider } from "./context/AuthContext";
 import BlogPage from "@pages/BlogPage";
 import { Toaster } from "react-hot-toast";
 import BlogDetailPage from "@pages/BlogDetailPage";
+import MyBlogs from "@pages/MyBlogs";
 
 function App() {
   const router = createBrowserRouter([
@@ -29,6 +30,10 @@ function App() {
     {
       path: "/blogs/:blogId",
       element: <BlogDetailPage />,
+    },
+    {
+      path: "/blogs/my-blogs",
+      element: <MyBlogs />,
     },
   ]);
   return (

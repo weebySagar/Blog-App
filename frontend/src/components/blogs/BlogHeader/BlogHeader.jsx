@@ -33,8 +33,12 @@ const BlogHeader = ({ className }) => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item href="/profile">My Profile</Dropdown.Item>
-              <Dropdown.Item href="/my-blogs">My Blogs</Dropdown.Item>
+              <Dropdown.Item to="/profile" as={Link}>
+                My Profile
+              </Dropdown.Item>
+              <Dropdown.Item to="/blogs/my-blogs" as={Link}>
+                My Blogs
+              </Dropdown.Item>
               <Dropdown.Item as={"button"} className="text-danger">
                 Log Out
               </Dropdown.Item>

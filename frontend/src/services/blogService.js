@@ -27,6 +27,20 @@ export const getBlog = async (blogId) => {
         console.log(data.blog);
         return data.blog;
     } catch (error) {
+        throw new Error(error.response.data.msg)
+    }
+}
+
+
+export const getBlogByUser = async () => {
+    try {
+        const { data } = await axios.get(`${BASE_URL}/user`, {
+            headers: {
+                Authorization: token
+            }
+        });
+        return data.blogs;
+    } catch (error) {
         console.log(error);
         throw new Error(error.response.data.msg)
     }

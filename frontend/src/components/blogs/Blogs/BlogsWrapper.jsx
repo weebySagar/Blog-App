@@ -1,12 +1,11 @@
 import React from "react";
 
 import useFetch from "@hooks/useFetch";
-import { getAllBlogs } from "../../../services/blogService";
 import { Col, Row, Spinner } from "react-bootstrap";
 import BlogItem from "./BlogItem";
 
-const BlogsWrapper = () => {
-  const { data, isLoading, error } = useFetch(getAllBlogs);
+const BlogsWrapper = ({ fetchFunction, isMyBlog }) => {
+  const { data, isLoading, error } = useFetch(fetchFunction);
 
   if (isLoading)
     return (
@@ -20,7 +19,7 @@ const BlogsWrapper = () => {
       <Row>
         {data?.map(blog => (
           <Col md={6} lg={4} xl={3} key={blog._id}>
-            <BlogItem {...blog} />
+            <BlogItem {...blog} isMyBlog={isMyBlog} />
           </Col>
         ))}
       </Row>

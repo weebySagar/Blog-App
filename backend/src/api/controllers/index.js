@@ -5,3 +5,4 @@ export { default as deleteBlogController } from "./blog/deleteBlog.controller.js
 export { default as updateBlogController } from "./blog/updateBlog.controller.js";
 export { default as getAllBlogsController } from "./blog/getAllBlogs.controller.js";
 export { default as getBlog } from "./blog/getBlog.controller.js";
+export { default as getBlogByUserController } from "./blog/getBlogByUser.controller.js";

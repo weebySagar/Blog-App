@@ -3,15 +3,15 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import BlogsWrapper from "./BlogsWrapper";
 
-const Blogs = () => {
+const Blogs = ({ title, fetchFunction, isMyBlog }) => {
   return (
     <section className="blogs" style={{ background: "#f2f2f2" }}>
       <InnerWrapper>
         <Container>
-          <h2>Blogs</h2>
+          <h2>{title}</h2>
 
           <div className="content-wrap">
-            <BlogsWrapper />
+            <BlogsWrapper fetchFunction={fetchFunction} isMyBlog={isMyBlog} />
           </div>
         </Container>
       </InnerWrapper>
