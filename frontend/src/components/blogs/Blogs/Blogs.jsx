@@ -8,7 +8,7 @@ const Blogs = ({ title, fetchFunction, isMyBlog }) => {
     <section className="blogs" style={{ background: "#f2f2f2" }}>
       <InnerWrapper>
         <Container>
-          <h2>{title}</h2>
+          <h3>{title}</h3>
 
           <div className="content-wrap">
             <BlogsWrapper fetchFunction={fetchFunction} isMyBlog={isMyBlog} />

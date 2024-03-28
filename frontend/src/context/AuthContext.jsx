@@ -1,11 +1,11 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [authData, setAuthData] = useState({
-    token: localStorage.getItem("token") || null,
-    user: JSON.parse(localStorage.getItem("user")) || null,
+    token: localStorage.getItem("storyversetoken") || null,
+    user: JSON.parse(localStorage.getItem("storyverseuser")) || null,
   });
 
   const login = (token, user) => {
@@ -20,8 +20,23 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("storyverseuser");
   };
 
+  const updateUser = user => {
+    setAuthData({ ...authData, user });
+    localStorage.setItem("storyverseuser", JSON.stringify(user));
+  };
+
+  useEffect(() => {
+    const token = localStorage.getItem("storyversetoken");
+    const newUser = JSON.parse(localStorage.getItem("storyverseuser"));
+
+    if (token && newUser) {
+      //   setUser(...user, token, user);
+      setAuthData({ ...authData, token, user: newUser });
+    }
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ ...authData, login, logout }}>
+    <AuthContext.Provider value={{ ...authData, login, logout, updateUser }}>
       {children}
     </AuthContext.Provider>
   );

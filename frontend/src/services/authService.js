@@ -18,3 +18,17 @@ export const registerUserService = async (userData) => {
         throw new Error(error.response.data.msg)
     }
 }
+
+
+export const updateUserService = async (name) => {
+    try {
+        const { data } = await axios.put(BASE_URL + '/update', { name }, {
+            headers: {
+                Authorization: localStorage.getItem("storyversetoken")
+            }
+        });
+        return data.user
+    } catch (error) {
+        throw new Error(error.response.data.msg)
+    }
+}

@@ -8,7 +8,7 @@ import CreateBlog from "@components/blogs/Blogs/CreateBlog";
 const MyBlogs = () => {
   return (
     <>
-      <BlogHeader className={"shadow"} />
+      <BlogHeader className={"shadow sticky"} />
       <div style={{ paddingTop: "85px" }}>
         <CreateBlog />
         <Blogs

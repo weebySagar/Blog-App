@@ -16,7 +16,7 @@ const BlogsWrapper = ({ fetchFunction, isMyBlog }) => {
 
   return (
     <div>
-      <Row>
+      <Row className="row-gap-4">
         {data?.map(blog => (
           <Col md={6} lg={4} xl={3} key={blog._id}>
             <BlogItem {...blog} isMyBlog={isMyBlog} refetch={refetch} />

@@ -8,6 +8,7 @@ import BlogPage from "@pages/BlogPage";
 import { Toaster } from "react-hot-toast";
 import BlogDetailPage from "@pages/BlogDetailPage";
 import MyBlogs from "@pages/MyBlogs";
+import MyProfile from "@pages/MyProfile";
 
 function App() {
   const router = createBrowserRouter([
@@ -34,6 +35,10 @@ function App() {
     {
       path: "/blogs/my-blogs",
       element: <MyBlogs />,
+    },
+    {
+      path: "/myprofile",
+      element: <MyProfile />,
     },
   ]);
   return (

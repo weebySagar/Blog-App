@@ -7,7 +7,7 @@ import { getAllBlogs } from "../services/blogService";
 
 const BlogPage = () => {
   return (
-    <div style={{ height: "5000px" }}>
+    <div>
       <BlogHeader />
       <BlogHeroBanner />
       <Blogs title={"Blogs"} fetchFunction={getAllBlogs} />

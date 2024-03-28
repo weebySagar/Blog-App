@@ -1,0 +1,11 @@
+.my-profile {
+    height: 100vh;
+    position: relative;
+
+    .form-wrapper {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

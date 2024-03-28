@@ -60,7 +60,9 @@ const CreateBlog = () => {
               {error && <p className="fs-6 text-danger">{error}</p>}
             </Form.Group>
 
-            <Button onClick={handleAddBlog}>Create Blog</Button>
+            <Button onClick={handleAddBlog} className="button-primary">
+              Create Blog
+            </Button>
           </div>
         </Container>
       </InnerWrapper>

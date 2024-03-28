@@ -6,3 +6,4 @@ export { default as updateBlogController } from "./blog/updateBlog.controller.js
 export { default as getAllBlogsController } from "./blog/getAllBlogs.controller.js";
 export { default as getBlog } from "./blog/getBlog.controller.js";
 export { default as getBlogByUserController } from "./blog/getBlogByUser.controller.js";
+export { default as updateUserController } from "./auth/update.controller.js";
